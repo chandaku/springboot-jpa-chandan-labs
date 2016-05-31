@@ -109,3 +109,21 @@ insert into SURVEY_ANSWERS (answer,question_id) values('Better than Most',7);
 insert into SURVEY_ANSWERS (answer,question_id) values('About the same as Most',7);
 insert into SURVEY_ANSWERS (answer,question_id) values('Not as good as Most',7);
 insert into SURVEY_ANSWERS (answer,question_id) values('Among the Worst',7);
+
+
+CREATE TABLE FILE_UPLOAD_TEST (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  DATA varchar(255) NOT NULL,
+  FILE_ID BIGINT(20),
+  FILE_NAME varchar(40),
+  FOREIGN KEY (FILE_ID) REFERENCES COMMON_FILE_ATTACH_IN (id),
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE COMMON_FILE_ATTACH_IN
+     (
+	 ID BIGINT (20),
+	 FILE_ATTACHMENT BLOB(2097088000),
+     FILE_MIME_TYPE varchar(100),
+     PRIMARY KEY ( ID )
+);

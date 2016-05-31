@@ -2,8 +2,11 @@ package com.chandan.labs.service;
 
 import java.util.List;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import com.chandan.labs.entity.Questions;
 import com.chandan.labs.entity.UserSurvey;
+import com.chandan.labs.dto.common.DownloadAttachmentDTO;
 
 public interface SurveyService {
 	
@@ -18,5 +21,9 @@ public interface SurveyService {
 	public String getQuestion(long questionId);
 	
 	public String getAnswer(long answerId);
+	
+	public void saveAttachment(MultipartFile aFile, long id);
+	
+	public DownloadAttachmentDTO getAttachment(long id);
 	
 }
